@@ -35,6 +35,10 @@ export class GoogleComponent extends Component {
       _ico, "Current Location");
     this.setState({ currentLocation: _current })
     document.addEventListener("mousedown", (e) => this.handleClickOutside(e));
+
+    if(this.props.currentLocationOnLoad) {
+      this.getCurrentLocation();
+    }
   }
 
   componentWillUnmount() {
